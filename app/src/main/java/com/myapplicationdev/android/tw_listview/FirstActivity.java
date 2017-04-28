@@ -1,5 +1,6 @@
 package com.myapplicationdev.android.tw_listview;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -29,6 +30,26 @@ public class FirstActivity extends AppCompatActivity {
         al.add("Year 1");
         al.add("Year 2");
         al.add("Year 3");
+
+         aa = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,al);
+
+        lv.setAdapter(aa);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selectedYear = al.get(position).toString();
+
+                Intent i = new Intent(FirstActivity.this,
+                        SecondActivity.class);
+                i.putExtra("year",selectedYear);
+                startActivity(i);
+
+            }
+        });
+
 
 
 
