@@ -12,6 +12,7 @@ public class FirstActivity extends AppCompatActivity {
     ListView lv;
     ArrayList<String> al;
     ArrayAdapter<String> aa;
+    //hi desmond
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
